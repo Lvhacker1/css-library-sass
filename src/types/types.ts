@@ -12,5 +12,5 @@ export interface DailyRoutineTypes {
 
 export interface NewRoutineTypes {
     name: string;
-    items: string;
+    items: RoutineItemTypes[];
 }
