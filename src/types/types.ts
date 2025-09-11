@@ -1,7 +1,7 @@
 export interface RoutineItemTypes {
     id:string;
     name: string;
-    completed: string;
+    completed: boolean;
 }
 
 export interface DailyRoutineTypes {

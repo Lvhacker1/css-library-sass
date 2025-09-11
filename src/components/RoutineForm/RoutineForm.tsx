@@ -1,4 +1,4 @@
-import { RoutineItemTypes, NewRoutineTypes } from "../../types/types"
+import type { RoutineItemTypes, NewRoutineTypes } from '../../types/types'
 import { useState } from "react"
 
 
@@ -27,7 +27,7 @@ const RoutineForm = ({addRoutine}: Props) => {
 
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
             className=""
             placeholder="blabla"
