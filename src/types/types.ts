@@ -9,3 +9,8 @@ export interface DailyRoutineTypes {
     name: string;
     items:  RoutineItemTypes[];
 }
+
+export interface NewRoutineTypes {
+    name: string;
+    items: string;
+}
