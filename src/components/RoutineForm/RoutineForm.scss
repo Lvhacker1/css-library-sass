@@ -1,0 +1,49 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.form {
+    background: $bg-color;
+    padding: $spacing-md;
+    border-radius: $radius-xs;
+    margin-bottom: $spacing-sm;
+
+
+    @include tablet-creen {
+        padding: $spacing-lg;
+        border-radius: $radius-sm;
+        margin-bottom: $spacing-lg;
+    } 
+
+    &__input {
+        width: 100%;
+        padding: $spacing-sm;
+        margin-bottom: $spacing-sm;
+        border: 1px olid $border-color;
+        border-radius: $radius-xs;
+        font-size: $font-size-sm;
+        color: $primary-color;
+    
+
+        @include tablet-creen {
+            padding: $spacing-md;
+            border-radius: $radius-sm;
+            margin-bottom: $spacing-md;
+            font-size: $font-size-md;
+        }
+
+        &::placeholder {
+            color: ($primary-color, 50%);
+        }
+
+        &::focus {
+            outline: none;
+            border-color: $button-color;
+        }
+    }
+
+    &__button {
+        @include button($button-color);
+        width: 100%;
+    }
+}
+

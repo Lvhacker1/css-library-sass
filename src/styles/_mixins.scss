@@ -1,0 +1,19 @@
+@use './variables' as *;
+
+@mixin tablet-creen {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop-creen {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin button($background-color) {
+    padding: $spacing-sm;
+    border: none;
+
+}

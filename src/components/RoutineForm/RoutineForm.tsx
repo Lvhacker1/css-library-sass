@@ -1,5 +1,6 @@
 import type { RoutineItemTypes, NewRoutineTypes } from '../../types/types'
 import { useState } from "react"
+import './RoutineForm.scss';
 
 
 interface Props {
@@ -27,20 +28,20 @@ const RoutineForm = ({addRoutine}: Props) => {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='form' onSubmit={handleSubmit}>
             <input
-            className=""
+            className="form__input"
             placeholder="blabla"
             value={name}
             onChange={(e) => setName(e.target.value)} 
             />
             <input
-            className=""
+            className="form__input"
             placeholder="blablabla"
             value={activity}
             onChange={(e) => setActivity(e.target.value)} 
             />
-            <button>Add Routineeeeeee</button>
+            <button className='form__button'>Add Routineeeeeee</button>
         </form>
 
     )
