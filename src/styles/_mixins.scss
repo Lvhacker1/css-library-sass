@@ -1,12 +1,12 @@
 @use './variables' as *;
 
-@mixin tablet-creen {
+@mixin tablet-screen {
     @media (min-width: $tablet) {
         @content;
     }
 }
 
-@mixin desktop-creen {
+@mixin desktop-screen {
     @media (min-width: $desktop) {
         @content;
     }
@@ -15,5 +15,19 @@
 @mixin button($background-color) {
     padding: $spacing-sm;
     border: none;
+    cursor: pointer;
+    border-radius: $radius-xs;
+    background: $background-color;
+    font-size: $font-size-sm;
+    transition: all 0.3 ease;
+
+    @include tablet-screen {
+        padding: $spacing-sm $spacing-md;
+    }
+
+    &:hover {
+        opacity: 0.7;
+        transform: translateY(-1px);
+    }
 
 }

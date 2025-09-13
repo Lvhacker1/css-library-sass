@@ -1,30 +1,40 @@
+@use "sass:color";
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
 .form {
     background: $bg-color;
-    padding: $spacing-md;
+    padding: $spacing-lg;
     border-radius: $radius-xs;
     margin-bottom: $spacing-sm;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    }
 
 
-    @include tablet-creen {
-        padding: $spacing-lg;
-        border-radius: $radius-sm;
+    @include tablet-screen {
+        padding: $spacing-lg * 2;
+        border-radius: $radius-xs;
         margin-bottom: $spacing-lg;
     } 
 
     &__input {
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
         padding: $spacing-sm;
-        margin-bottom: $spacing-sm;
-        border: 1px olid $border-color;
+        margin-bottom: $spacing-md;
+        border: 2px solid $border-color;
         border-radius: $radius-xs;
         font-size: $font-size-sm;
         color: $primary-color;
     
 
-        @include tablet-creen {
+        @include tablet-screen {
             padding: $spacing-md;
             border-radius: $radius-sm;
             margin-bottom: $spacing-md;
@@ -32,7 +42,7 @@
         }
 
         &::placeholder {
-            color: ($primary-color, 50%);
+            color: color.adjust(#3b3a3a, $lightness: 40%);
         }
 
         &::focus {
@@ -43,7 +53,9 @@
 
     &__button {
         @include button($button-color);
-        width: 100%;
+        width: max-content;
+        
+        
     }
 }
 

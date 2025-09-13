@@ -1,0 +1,114 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.card {
+    background: $bg-color;
+    padding: $spacing-md;
+    border-radius: $radius-xs;
+    margin-bottom: $spacing-md;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    @include tablet-screen {
+        padding: $spacing-lg;
+        border-radius: $radius-xs;
+        margin-bottom: $spacing-lg;
+    } 
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-sm;
+        padding-bottom: $spacing-md;
+
+        @include tablet-screen {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        color: $primary-color;
+        font-size: $font-size-md;
+        font-weight: 600;
+        margin: $spacing-sm;
+    
+
+        @include tablet-screen {
+            font-size: $font-size-lg;
+        }
+    }
+
+    &__button{
+        @include button($delete-color);
+        width: 100%;
+    
+
+        @include tablet-screen {
+            width: auto;
+            min-width: 100px;
+        }
+
+        &:hover {
+            
+        }
+    }
+
+    
+    &__item {
+        display: flex;
+        gap: $spacing-sm;
+        margin-bottom: $spacing-sm;
+        align-items: center;
+        padding: $spacing-xs;
+        border-radius: $radius-xs;
+        transition: all 0.2s ease;
+        
+        @include tablet-screen {
+            gap: $spacing-md;
+            padding: $spacing-sm;
+        }
+        
+        &:hover {
+            background: lighten($border-color, 10%);
+            border: $border-color;
+            transform: translateX(3px);
+        }
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__checkbox {
+        width: 18px;
+        height: 18px;
+        accent-color: $button-color;
+        cursor: pointer;
+        flex-shrink: 0;
+        
+  
+    }
+
+    &__text {
+        color: $primary-color;
+        font-size: $font-size-sm;
+        flex: 1;
+        
+        @include tablet-screen {
+            font-size: $font-size-md;
+        }
+        
+        &--completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+            color: lighten($primary-color, 30%);
+        }
+    }
+}

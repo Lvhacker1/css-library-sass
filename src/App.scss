@@ -1,0 +1,44 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.app {
+    background: $bg-color;
+    min-height: 100vh;
+    padding: $spacing-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet-screen {
+        padding: $spacing-md;
+    }
+
+    @include desktop-screen {
+        padding: $spacing-lg;
+    }
+
+    &__container {
+        width: 100%;
+        margin: 0 auto;
+
+        @include tablet-screen {
+            max-width: 600px;
+        }
+
+        @include desktop-screen {
+           max-width: 800px;
+        }
+    }
+    
+    &__title {
+        color: $primary-color;
+        text-align: center;
+        margin-bottom: $spacing-lg;
+        font-size: $font-size-lg;
+
+        @include tablet-screen {
+            font-size: $font-size-xl;
+            margin-bottom: $spacing-lg;
+        }
+    }
+}

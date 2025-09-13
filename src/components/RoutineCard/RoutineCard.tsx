@@ -1,4 +1,5 @@
 import type { DailyRoutineTypes } from "../../types/types";
+import './RoutineCard.scss';
 
 interface Props {
     routine: DailyRoutineTypes;
@@ -9,9 +10,9 @@ interface Props {
 const RoutineCard = ({routine, deleteRoutine, toggleItem}: Props) => {
     return (
         <div className="card">
-            <div>
+            <div className="card__container">
                 <h3 className="card__title">{routine.name}</h3>
-                <button className="card__button" onClick={() => deleteRoutine(routine.id)}></button>
+                <button className="card__button" onClick={() => deleteRoutine(routine.id)}>lllll</button>
             </div>
             {routine.items.map(item => (
                 <div key={item.id} className="card__item">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import './App.scss'
 import {type DailyRoutineTypes, type NewRoutineTypes } from './types/types'
 import RoutineCard from './components/RoutineCard/RoutineCard';
 import RoutineForm from './components/RoutineForm/RoutineForm';
@@ -49,8 +49,9 @@ function App() {
 
 
   return (
-    <>
-    <div>
+    <div className='app'>
+    <div className='app__container'>
+      <h1 className='app__title'>blablabla</h1>
       <RoutineForm addRoutine={onAddRoutine} />
       {routines.map (routine => (
         <RoutineCard
@@ -61,7 +62,7 @@ function App() {
         />
       ))}
     </div>
-    </>
+    </div>
   )
 }
 
