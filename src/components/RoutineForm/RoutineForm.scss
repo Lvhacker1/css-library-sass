@@ -15,7 +15,6 @@
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
     }
 
-
     @include tablet-screen {
         padding: $spacing-lg * 2;
         border-radius: $radius-xs;
@@ -32,7 +31,6 @@
         border-radius: $radius-xs;
         font-size: $font-size-sm;
         color: $primary-color;
-    
 
         @include tablet-screen {
             padding: $spacing-md;
@@ -57,7 +55,6 @@
         display: block;
         margin: 0 auto;
         transition: all 0.3 ease;
-    
 
         @include tablet-screen {
             width: auto;
@@ -66,9 +63,6 @@
 
         &:hover {
             transform: translateY(-2px);
-        }
-        
-        
+        } 
     }
 }
-

@@ -2,7 +2,7 @@
 @use 'styles/mixins' as *;
 
 .app {
-    background: $bg-color;
+    background: $app-bg-color;
     min-height: 100vh;
     padding: $spacing-sm;
     display: flex;

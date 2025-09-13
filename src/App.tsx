@@ -3,9 +3,13 @@ import './App.scss'
 import {type DailyRoutineTypes, type NewRoutineTypes } from './types/types'
 import RoutineCard from './components/RoutineCard/RoutineCard';
 import RoutineForm from './components/RoutineForm/RoutineForm';
+import { texts } from './data/data';
 
-function App() {
+interface AppProps {
+  title?: string;
+}
 
+function App({title = texts.appTitle}: AppProps) {
   const [routines, setRoutines] = useState<DailyRoutineTypes[]> ([]);
 
   useEffect(() => {
@@ -45,23 +49,20 @@ function App() {
     ))
   }
 
-
-
-
   return (
     <div className='app'>
-    <div className='app__container'>
-      <h1 className='app__title'>blablabla</h1>
-      <RoutineForm addRoutine={onAddRoutine} />
-      {routines.map (routine => (
-        <RoutineCard
-        key={routine.id}
-        routine={routine}
-        deleteRoutine={onDeleteRoutine}
-        toggleItem={onToggleItem}
-        />
-      ))}
-    </div>
+      <div className='app__container'>
+        <h1 className='app__title'>{title}</h1>
+        <RoutineForm addRoutine={onAddRoutine} />
+        {routines.map (routine => (
+          <RoutineCard
+          key={routine.id}
+          routine={routine}
+          deleteRoutine={onDeleteRoutine}
+          toggleItem={onToggleItem}
+          />
+        ))}
+      </div>
     </div>
   )
 }
