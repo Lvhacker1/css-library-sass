@@ -45,15 +45,28 @@
             color: color.adjust(#3b3a3a, $lightness: 40%);
         }
 
-        &::focus {
+        &:focus {
             outline: none;
-            border-color: $button-color;
+            border-color:color.adjust(#3b3a3a, $lightness: 30%);
         }
     }
 
     &__button {
         @include button($button-color);
-        width: max-content;
+        width: fit-content;
+        display: block;
+        margin: 0 auto;
+        transition: all 0.3 ease;
+    
+
+        @include tablet-screen {
+            width: auto;
+            min-width: 100px;
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+        }
         
         
     }

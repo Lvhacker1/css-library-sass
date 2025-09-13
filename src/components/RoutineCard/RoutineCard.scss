@@ -49,14 +49,9 @@
         @include button($delete-color);
         width: 100%;
     
-
         @include tablet-screen {
             width: auto;
             min-width: 100px;
-        }
-
-        &:hover {
-            
         }
     }
 
